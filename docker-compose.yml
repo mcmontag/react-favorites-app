@@ -1,0 +1,26 @@
+services:
+  api:
+    build: ./backend
+    depends_on:
+      - mongo
+    ports:
+      - "3000:3000"
+    networks: 
+      - network-backend
+  
+  mongo:
+    image: mongo
+    restart: always
+    volumes: 
+      - mongodb_data:/data/db
+    environment: 
+      MONGODB_INITDB_ROOT_USERNAME: username
+      MONGODB_INITDB_ROOT_PASSWORD: password
+    networks: 
+      - network-backend
+
+networks:
+  network-backend:
+
+volumes: 
+  mongodb_data:

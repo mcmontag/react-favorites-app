@@ -54,7 +54,7 @@ function App() {
       >
         <AppShell.Header p="md">
           <Group>
-            <Title order={3}>Quick React App</Title>
+            <Title order={3}>React Favorites App</Title>
           </Group>
         </AppShell.Header>
 
